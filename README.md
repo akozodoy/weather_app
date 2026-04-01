@@ -31,15 +31,15 @@ By making industry-leading tools and education available to individuals from all
 ## Application Preview
 
 ### Main Page
-![Main Page](./assets/weather_main_page.png)
+![Main Page](./screenshots/weather_main_page.png)
 
 ### Weather Search
-![WeatherSearch](./assets/weather_search1.png)
-![WeatherSearch](./assets/weather_search2.png)
+![WeatherSearch](./screenshots/weather_search1.png)
+![WeatherSearch](./screenshots/weather_search2.png)
 
 ### History Page
-![HistoryEmpty](./assets/weather_history_empty.png)
-![History](./assets/weather_history.png)
+![HistoryEmpty](./screenshots/weather_history_empty.png)
+![History](./screenshots/weather_history.png)
 
 ---
 
