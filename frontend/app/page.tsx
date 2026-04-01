@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 type WeatherResponse = {
   location: {
     name: string;
@@ -48,10 +50,9 @@ export default function HomePage() {
       setError("");
       setWeather(null);
 
-      const res = await fetch(
-        `http://localhost:8000/weather?location=${encodeURIComponent(searchLocation)}`
-      );
-
+  const res = await fetch(
+    `${API_URL}/weather?location=${encodeURIComponent(searchLocation)}`
+  );
       if (!res.ok) {
         throw new Error("Could not fetch weather data");
       }
@@ -113,14 +114,14 @@ export default function HomePage() {
             View History
           </a>
           <a
-            href="http://localhost:8000/export/json"
+            href={`${API_URL}/export/json`}
             target="_blank"
             className="rounded-xl border border-slate-700 px-4 py-2 font-medium hover:bg-slate-800 text-white"
           >
             Export JSON
           </a>
           <a
-            href="http://localhost:8000/export/csv"
+            href={`${API_URL}/export/csv`}
             target="_blank"
             className="rounded-xl border border-slate-700 px-4 py-2 font-medium hover:bg-slate-800 text-white"
           >

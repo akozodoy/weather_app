@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 type HistoryRecord = {
   id: number;
   location_query: string;
@@ -31,7 +33,7 @@ export default function HistoryPage() {
       setLoading(true);
       setError("");
 
-      const res = await fetch("http://localhost:8000/history");
+      const res = await fetch(`${API_URL}/history`);
       if (!res.ok) {
         throw new Error("Failed to load history");
       }
@@ -51,7 +53,7 @@ export default function HistoryPage() {
 
   const handleDelete = async (id: number) => {
     try {
-      const res = await fetch(`http://localhost:8000/history/${id}`, {
+      const res = await fetch(`${API_URL}/history/${id}`, {
         method: "DELETE",
       });
 
@@ -72,7 +74,7 @@ export default function HistoryPage() {
 
   const handleUpdate = async (id: number) => {
     try {
-      const res = await fetch(`http://localhost:8000/history/${id}`, {
+      const res = await fetch(`${API_URL}/history/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
